@@ -1,18 +1,29 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { Drawer } from 'expo-router/drawer';
+import { Ionicons } from '@expo/vector-icons';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-SplashScreen.preventAutoHideAsync();
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <Drawer screenOptions={{ headerShown: false }}>
+      <Drawer.Screen
+        name="(noticias)"
+        options={{
+          drawerLabel: 'Notícias',
+          title: 'Notícias',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="newspaper-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="sobre"
+        options={{
+          drawerLabel: 'Sobre',
+          title: 'Sobre',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="information-circle-outline" size={size} color={color} />
+          ),
+        }}
+      />
+    </Drawer>
   );
 }
