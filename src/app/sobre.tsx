@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function SobreScreen() {
   const router = useRouter();
@@ -15,7 +14,7 @@ export default function SobreScreen() {
         
         <Text style={styles.descricao}>
           Esse é o Mini App de Notícias.{'\n'}
-          Você vai praticar diferentes tipos de navegação com React-Native:
+          Pratiquei a navegação em React Native utilizando o Expo Router, implementando uma estrutura de navegação com: 
         </Text>
         <Text style={styles.topico}>• Drawer (raiz)</Text>
         <Text style={styles.topico}>• Tabs (Tecnologia/Esportes)</Text>
